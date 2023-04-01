@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Loan Approval predict</title>
+   </head>
+   <body>
+      <h2>Enter user data </h2>
+      <form action = "{{ url_for('predict') }}" method = "POST">
+        Gender:
+        <select name="gender">
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+        <br><br>
+        Married:
+        <select name="married">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+        <br><br>
+        Dependents:
+        <select name="dependents">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3+</option>
+        </select>
+        <br><br>
+        <label>Education:</label>
+        <select name="education">
+            <option value="0">Graduate</option>
+            <option value="1">Not Graduate</option>
+        </select>
+        <br><br>
+        <label>Self Employed:</label>
+        <select name="self_employed">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+        <br><br>
+        Applicant Income:
+        <input type="text" name="applicant_income">
+        <br><br>
+        Co-applicant Income:
+        <input type="text" name="coapplicant_income" >
+        <br><br>
+        Loan Amount:
+        <input type="text"  name="loan_amount" >
+        <br><br>
+        Loan Amount Term:
+        <input type="text" name="loan_amount_term" >
+        <br><br>
+        Credit History:
+        <select name="credit_history">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+        <br><br>
+        Property Area:
+        <select name="property_area">
+            <option value="2">Urban</option>
+            <option value="0">Rural</option>
+            <option value="1">Semiurban</option>
+        </select>
+        <br><br>
+         <input type="submit" value="Predicted loan status ">
+      </form>
+	  {{ prediction_text }}
+   </body>
+</html>
